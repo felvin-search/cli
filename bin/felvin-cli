@@ -10,7 +10,7 @@ if (!isLocal) {
   require("../");
 } else {
   require("ts-node").register({
-    project: path.resolve(__dirname, "../../../tsconfig.json"),
+    project: path.resolve(__dirname, "../tsconfig.json"),
     compilerOptions: {
       module: "CommonJS",
     },
