@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "dist-types",
-    "rootDir": ".",
+    "outDir": "dist",
+    "rootDir": "./src",
     "declaration": true,
     "declarationMap": false,
     "target": "es5",
@@ -24,5 +24,6 @@
     "sourceMap": true,
     "noImplicitAny": false
   },
-  "include": ["packages/*/src"]
+  "include": ["packages/*/src"],
+  "files": ["./src/index.ts"]
 }
