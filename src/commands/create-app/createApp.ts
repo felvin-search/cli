@@ -8,10 +8,10 @@ import { exec } from "child_process";
 import { addNewAppDep, updateAppsArray } from "../../lib";
 import { camelCase, upperFirst } from "lodash";
 
-const PROJECT_HOME = resolve(__dirname, "../../../../..");
+const PROJECT_HOME = resolve(__dirname, "../../..");
 const TEMPLATE_APP_PATH = join(
   PROJECT_HOME,
-  "packages/cli/templates/default-app"
+  "templates/default-app"
 );
 
 async function generateTemplate(directory, answers) {
@@ -90,7 +90,7 @@ export default async function main() {
     },
   ]);
 
-  const FINAL_APP_PATH = join(PROJECT_HOME, `apps/${answers.id}`);
+  const FINAL_APP_PATH = join("./", `apps/${answers.id}`);
   if (await fs.pathExists(FINAL_APP_PATH)) {
     throw new Error("ID already exists, please try again with different id");
   }
