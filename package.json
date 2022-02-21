@@ -1,18 +1,18 @@
 {
   "name": "@felvin-search/cli",
   "description": "CLI for developing instant apps for Felvin",
-  "version": "1.57.1",
+  "version": "1.57.2-0",
   "license": "MIT",
   "main": "./src/index.js",
   "publishConfig": {
     "access": "public",
-    "main": "./dist/index.cjs.js"
+    "main": "./dist/index.js"
   },
   "bin": {
     "felvin-cli": "bin/felvin-cli"
   },
   "scripts": {
-    "build": "tsc src/index.ts --esModuleInterop"
+    "build": "tsc --esModuleInterop"
   },
   "dependencies": {
     "@types/fs-extra": "^9.0.13",
@@ -27,7 +27,9 @@
     "lodash": "^4.17.21",
     "node-polyfill-webpack-plugin": "^1.1.4",
     "recursive-readdir": "^2.2.2",
+    "ts-loader": "^9.2.6",
     "ts-node": "^10.2.1",
+    "typescript": "^4.5.5",
     "webpack": "^5.68.0"
   }
 }
