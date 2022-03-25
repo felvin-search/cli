@@ -1,0 +1,28 @@
+name: Update and publish new cli version
+
+on:
+  workflow_dispatch:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{secrets.PAT}}
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+          registry-url: "https://registry.npmjs.org"
+          always-auth: true
+      - run: yarn install
+      - run: |
+          yarn version minor
+          git add .
+          git commit -m "Minor version bump;"
+          git push
+      - run: yarn build
+      - run: npm publish
+        env:
+          YARN_NPM_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
