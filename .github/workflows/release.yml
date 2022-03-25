@@ -18,10 +18,8 @@ jobs:
           always-auth: true
       - run: yarn install
       - run: |
-          yarn version minor
-          git add .
-          git commit -m "Minor version bump;"
-          git push
+          chmod +x ./.github/workflows/update-publish.sh
+          ./.github/workflows/update-publish.sh
       - run: yarn build
       - run: npm publish
         env:
