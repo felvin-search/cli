@@ -1,7 +1,7 @@
 {
   "name": "@felvin-search/cli",
   "description": "CLI for developing instant apps for Felvin",
-  "version": "1.61.0",
+  "version": "1.62.0",
   "main": "./src/index.js",
   "publishConfig": {
     "access": "public",
